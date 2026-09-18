@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "ai.cleanvector/cleanvector",
   "title": "CleanVector",
-  "description": "Generate professional logos and editable SVG artwork, or vectorize any image, from your AI agent.",
+  "description": "Create professional SVG artwork, icons and vector logos from a prompt, or vectorize any image.",
   "version": "1.0.1",
   "websiteUrl": "https://cleanvector.ai/mcp",
   "repository": {

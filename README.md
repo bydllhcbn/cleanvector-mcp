@@ -5,7 +5,7 @@
 <h1 align="center">CleanVector MCP Server</h1>
 
 <p align="center">
-  Generate professional logos and editable SVG artwork, or vectorize any image, from your AI agent.
+  Create professional SVG artwork, icons and vector logos from a prompt, or vectorize any image.
 </p>
 
 <p align="center">
@@ -19,15 +19,15 @@
 
 CleanVector is a hosted [Model Context Protocol](https://modelcontextprotocol.io) server. It gives Claude Code, Cursor, VS Code, Windsurf and any other MCP client three things most image tools cannot return to an agent:
 
-- **Professional logos.** One brief in, a full brand kit out: the logo as editable SVG, black and white variants, transparent PNG exports and a color palette measured from the finished mark.
-- **Production-ready SVG.** Illustrations, icons, stickers and mascots as real vector paths with a transparent background. No embedded bitmaps, no white rectangle behind the art.
+- **Professional SVG artwork.** Illustrations, icons, stickers and mascots as real vector paths with a transparent background. No embedded bitmaps, no white rectangle behind the art.
+- **Vector logos.** One brief in, a full brand kit out: the logo as editable SVG, black and white variants, transparent PNG exports and a color palette measured from the finished mark.
 - **Clean vectorization.** Turn a PNG, JPG or WebP, including AI-generated images, into an SVG you can recolor and scale.
 
 Nothing to install or run. The server is remote, speaks Streamable HTTP and is listed in the official MCP Registry as `ai.cleanvector/cleanvector`.
 
 ## Examples
 
-These three logos were generated from a one-sentence brief each. They are the actual SVG files, stored in [`examples/`](examples).
+These three vector logos were generated from a one-sentence brief each. They are the actual SVG files, stored in [`examples/`](examples).
 
 <table>
   <tr>
@@ -39,9 +39,9 @@ These three logos were generated from a one-sentence brief each. They are the ac
 
 What you can ask your agent once it is connected:
 
-> Design a logo for "Northstar", a strategy studio. Geometric, confident, deep blue with one coral accent. Save the SVG and the black and white variants into `./brand`.
-
 > Generate six matching flat line icons for a fitness app as SVG and put them in `public/icons`.
+
+> Design a logo for "Northstar", a strategy studio. Geometric, confident, deep blue with one coral accent. Save the SVG and the black and white variants into `./brand`.
 
 > Vectorize `./mockups/hero.png` and replace the raster in the landing page with the SVG.
 
@@ -137,8 +137,8 @@ claude mcp add --transport http cleanvector https://cleanvector.ai/api/mcp \
 
 | Tool | What it does | Cost |
 | --- | --- | --- |
-| `generate_logo` | Generate a professional vector logo with original, black and white variants, PNG exports and a measured palette. Accepts a reference image to refine an existing identity or to use as loose inspiration. | 8 credits |
-| `generate_illustration` | Generate an editable SVG illustration, icon, sticker or mascot scene from a text prompt. Pass a `mascot_id` to keep one character consistent across scenes. | 4 credits |
+| `generate_illustration` | Generate professional, editable SVG artwork from a text prompt: illustrations, icons, stickers and mascot scenes. Pass a `mascot_id` to keep one character consistent across scenes. | 4 credits |
+| `generate_logo` | Generate a vector logo with original, black and white variants, PNG exports and a measured palette. Accepts a reference image to refine an existing identity or to use as loose inspiration. | 8 credits |
 | `vectorize_image` | Convert a PNG, JPG or WebP (up to 5 MB, by URL or base64) into a clean, editable SVG. | 1 or 4 credits |
 | `wait_for_task` | Wait for an asynchronous task to settle and return its result. | free |
 | `get_task` | Fetch the status of one task, including download URLs once it succeeds. | free |
@@ -149,7 +149,7 @@ claude mcp add --transport http cleanvector https://cleanvector.ai/api/mcp \
 | `download_logo_kit` | Return three SVGs, three PNGs and `palette.json` as a ZIP. | free |
 | `get_account` | Return the current plan and credit balance. | free |
 
-Generation is asynchronous. A typical flow is `generate_logo`, then `wait_for_task`, then `download_logo_kit`. Downloads and re-exports never cost credits.
+Generation is asynchronous. A typical flow is `generate_illustration`, then `wait_for_task`, then `download_svg`. Downloads and re-exports never cost credits.
 
 ## Details
 
