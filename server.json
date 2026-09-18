@@ -1,0 +1,31 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.cleanvector/cleanvector",
+  "title": "CleanVector",
+  "description": "Generate professional logos and editable SVG artwork, or vectorize any image, from your AI agent.",
+  "version": "1.0.1",
+  "websiteUrl": "https://cleanvector.ai/mcp",
+  "icons": [
+    {
+      "src": "https://cleanvector.ai/logo.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://cleanvector.ai/api/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer API key from CleanVector (format: Bearer cv_...).",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
