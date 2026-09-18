@@ -5,6 +5,10 @@
   "description": "Generate professional logos and editable SVG artwork, or vectorize any image, from your AI agent.",
   "version": "1.0.1",
   "websiteUrl": "https://cleanvector.ai/mcp",
+  "repository": {
+    "url": "https://github.com/bydllhcbn/cleanvector-mcp",
+    "source": "github"
+  },
   "icons": [
     {
       "src": "https://cleanvector.ai/logo.png",
